@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+
 namespace TestBlazorWeb.Services.WeatherForecast;
 
 public class WeatherForecast

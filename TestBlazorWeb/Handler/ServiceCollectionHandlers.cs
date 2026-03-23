@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using TestBlazorWeb.Services.Counting;
 
 namespace TestBlazorWeb.Handler;
