@@ -1,0 +1,27 @@
+﻿@page "/counter"
+
+@using TestBlazorWeb.Services.Counting
+@inject IJSRuntime JS
+@rendermode InteractiveServer
+
+
+@inject CountingService CounterService
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @CounterService.CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    
+    // Opcional, apenas se quiser efetuar outros eventos além do Increment do próprio CounterService
+    private async Task IncrementCount()
+    {
+        if (CounterService.CurrentCount < 10) CounterService.Increment();
+        else await JS.InvokeVoidAsync("alert", "Limite de cliques excedido");
+    }
+    
+}
